@@ -18,12 +18,10 @@ import models.requests.JwtModel;
 import models.requests.SaveNewAuthorRequest;
 import models.requests.SaveNewBooksRequest;
 
-import java.text.SimpleDateFormat;
-import java.util.Date;
 import java.util.List;
 
 import static io.restassured.RestAssured.given;
-import static steps.ReadProperties.*;
+import static utils.ReadProperties.*;
 
 public class Specifications {
 

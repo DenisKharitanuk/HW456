@@ -1,11 +1,10 @@
-package steps;
+package utils;
 
 import java.io.IOException;
 import java.util.Properties;
 
 public class ReadProperties {
     private static final Properties properties;
-
 
     static {
         properties = new Properties();

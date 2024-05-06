@@ -16,7 +16,7 @@ import steps.asertsResponses.SaveBookAssert;
 import static org.apache.commons.lang3.RandomStringUtils.randomAlphabetic;
 import static steps.Specifications.*;
 import static steps.asertsResponses.NegativeAsser.verifyBodyNegative;
-import static steps.DateGenerator.dateGenerator;
+import static utils.DateGenerator.dateGenerator;
 
 @Epic("PostTests")
 @Story("saveNewBook")

@@ -2,36 +2,30 @@ package entity;
 
 
 import com.fasterxml.jackson.annotation.JsonInclude;
-import com.fasterxml.jackson.annotation.JsonProperty;
-import jakarta.xml.bind.annotation.XmlAccessType;
-import jakarta.xml.bind.annotation.XmlAccessorType;
-import jakarta.xml.bind.annotation.XmlElement;
-import jakarta.xml.bind.annotation.XmlRootElement;
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.Table;
 import lombok.Data;
+import java.io.Serializable;
+import java.util.Date;
 
-import java.sql.Date;
 
-
+@Entity
 @Data
-@XmlAccessorType(XmlAccessType.FIELD)
-@XmlRootElement(name = "book")
 @JsonInclude(JsonInclude.Include.NON_NULL)
-public class Book {
+@Table(name = "book")
+public class Book implements Serializable {
 
-    @XmlElement(name = "id", required = true)
-    @JsonProperty("id")
+    @jakarta.persistence.Id
+    @jakarta.persistence.Column(name = "id")
     private long id;
 
-    @XmlElement(name = "book_title", required = true)
-    @JsonProperty("bookTitle")
+    @jakarta.persistence.Column(name = "book_title")
     private String bookTitle;
 
-    @XmlElement(name = "author", required = true)
-    @JsonProperty("author")
-    private Author author;
+    @jakarta.persistence.Column(name = "author_id")
+    private long authorId;
 
-    @XmlElement(name = "updated", required = false)
-    @JsonProperty("updated")
+    @Column(name = "updated")
     private Date updated;
-
 }
